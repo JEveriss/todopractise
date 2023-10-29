@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 *:focus {
-  outline: 1px dashed #228bec;
+  outline: 1px solid #228bec;
   outline-offset: 0;
 }
 html {
@@ -49,18 +49,17 @@ textarea {
 button,
 input {
   overflow: visible;
+  border-radius: 5px;
 }
 input[type="text"] {
-  border-radius: 0;
+  border-radius: 5px;
 }
 body {
   width: 100%;
   max-width: 68rem;
   margin: 0 auto;
-  font:
-    1.6rem/1.25 Arial,
-    sans-serif;
-  background-color: #f5f5f5;
+  font: 1.6rem/1.25 Arial, sans-serif;
+  background-color: #faf2ef;
   color: #4d4d4d;
 }
 @media screen and (min-width: 620px) {
@@ -77,13 +76,17 @@ body {
 }
 .btn {
   padding: 0.8rem 1rem 0.7rem;
-  border: 0.2rem solid #4d4d4d;
+  border: 0.2rem solid #793921;
   cursor: pointer;
   text-transform: capitalize;
 }
 .btn.toggle-btn {
   border-width: 1px;
   border-color: #d3d3d3;
+  transition: 0.3s;
+}
+.btn.toggle-btn:hover {
+  border-color: #131200;
 }
 .btn.toggle-btn[aria-pressed="true"] {
   text-decoration: underline;
@@ -91,22 +94,25 @@ body {
 }
 .btn__danger {
   color: #fff;
-  background-color: #ca3c3c;
-  border-color: #bd2130;
+  background-color: #e3735e;
+  transition: 0.2s;
+}
+.btn__danger:hover{
+  background-color: #793921;
 }
 .btn__filter {
   border-color: lightgrey;
 }
 .btn__primary {
   color: #fff;
-  background-color: #000;
+  background-color: #793921;
 }
 .btn-group {
   display: flex;
   justify-content: space-between;
 }
 .btn-group > * {
-  flex: 1 1 49%;
+  flex: 1;
 }
 .btn-group > * + * {
   margin-left: 0.8rem;
@@ -152,9 +158,7 @@ body {
   margin: 2rem 0 4rem 0;
   padding: 1rem;
   position: relative;
-  box-shadow:
-    0 2px 4px 0 rgba(0, 0, 0, 0.2),
-    0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 550px) {
   .todoapp {
@@ -243,6 +247,8 @@ body {
   left: -2px;
   width: 44px;
   height: 44px;
+  border-radius: 50px;
+  color: #793921;
 }
 .c-cb > input[type="checkbox"] {
   -webkit-font-smoothing: antialiased;
@@ -269,7 +275,7 @@ body {
   background: transparent;
 }
 .c-cb > input[type="checkbox"]:focus + label::before {
-  border-width: 4px;
+  border-width: 2px;
   outline: 2px dashed #228bec;
 }
 .c-cb > label::after {
@@ -286,6 +292,7 @@ body {
   border-top-color: transparent;
   opacity: 0;
   background: transparent;
+  color: #793921;
 }
 .c-cb > input[type="checkbox"]:checked + label::after {
   opacity: 1;
